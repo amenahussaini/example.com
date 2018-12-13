@@ -7,11 +7,34 @@
     </head>
     <body>
             <nav>
-                    <ul>
-                      <li><a href="index.html">Home</a></li>
-                      <li><a href="resume.html">Resume</a></li>
-                      <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                  </nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="resume.html">Resume</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+                  <br />
+                  <h1>Contact Form</h1>
+                  <form action="https://formspree.io/amena298@yahoo.com" method="POST"></form>
+                  <div>
+                      <label for="name">Name</label>
+                      <input id="name" type="text" name="name">
+                  </div>
+
+                  <div>
+                    <label for="name">Email</label>
+                    <input id="email" type="email" name="replyto">
+                    </div>
+
+                    <div>
+                        <label for="name">Message</label>
+                        <textarea id="message" name="message"></textarea>
+                    </div>
+                    <div>
+                        <input type="hidden" name="_subject" value="New submission!">
+                    </div>
+                    <div>
+                        <input type="submit" value="Send">
+                    </div>
     </body>
 </html>
