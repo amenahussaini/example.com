@@ -3,20 +3,25 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="./dist/css/main.css">
         <title>Amena Hussaini</title>
     </head>
     <body>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="resume.html">Resume</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-                  <br />
-                  <h1>Contact Form</h1>
-                  <form action="https://formspree.io/amena298@yahoo.com" method="POST">
-                  <div>
+        <header>
+                <span class="logo">My Website</span>
+                <a id="toggleMenu">Menu</a>
+                <nav>           
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="resume.html">Resume</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <main>
+                <form class="contact-form" action="https://formspree.io/amena298@yahoo.com" method="POST">
+                    <h1>Contact Form</h1>
+                    <div>
                       <label for="name">Name</label>
                       <input id="name" type="text" name="name">
                   </div>
@@ -39,5 +44,20 @@
                         <input type="submit" value="Send">
                     </div>
             </form>
+            </main>
+            <script>
+                    var toggleMenu = document.getElementById('toggleMenu');
+                    var nav = document.querySelector('nav');
+                    toggleMenu.addEventListener(
+                        'click',
+                        function(){
+                        if(nav.style.display=='block'){
+                            nav.style.display='none';
+                        }else{
+                            nav.style.display='block';
+                        }
+                        }
+                    );
+                </script>
     </body>
 </html>
