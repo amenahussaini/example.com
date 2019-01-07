@@ -3,23 +3,23 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="./dist/css/main.css">
+        <link rel="stylesheet" type="text/css" href="./dist/css/resume.css">
         <title>Amena Hussaini</title>
     </head>
     <body>
             <header>
                     <span class="logo">My Website</span>
                     <a id="toggleMenu">Menu</a>
-                    <nav>           
+                    <nav>
                         <ul>
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="resume.html">Resume</a></li>
-                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="index.php">Home</a></li>
+                            <li><a href="resume.php">Resume</a></li>
+                            <li><a href="contact.php">Contact</a></li>
                         </ul>
                     </nav>
                 </header>
                 <main>
-                
+
                     <div id="personal">
                         <h1 style="text-align: center">Amena Hussaini</h1>
                         <div style="width: 100%; text-align: center">
