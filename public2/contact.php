@@ -1,16 +1,61 @@
 <?php
 
-require '../config/keys.php';
-require '../core/Amena/src/Validation/Validate.php';
+
+class Validate
+{
+  public $validation = [];
+  public $errors = [];
+  public $data = [];
+
+  public function notEmpty($value){
+    if(!empty($value)){
+      return true;
+    }
+    return false;
+  }
+
+  public function email($value){
+    if(filter_var($value, FILTER_VALIDATE_EMAIL)){
+      return true;
+    }
+    return false;
+  }
+
+  public function check($data){
+    $this->date = $data;
+
+ //   foreach(array_keys($this->validation) as $fieldName){
+  //    $this->rules($fieldName);
+ //   }
+  }
+
+  //public function rules($field){
+  //  foreach($this->validation[$field] as $rule){
+  //    if($this->{$rule['rule']}($this->data[$field]) === false){
+  //      $this->errors[$field] = $rule;
+  //    }
+ //   }
+//  }
+
+  public function error($field){
+    if(!empty($this->errors[$field])){
+      return $this->errors[$field]['message'];
+    }
+  }
+  public function userInput($field){
+    return !empty($this->data[$field])?$this->data[$field]:null;
+  }
+}
+
+
+
 require '../vendor/autoload.php';
 
 use Amena\Validation;
 use Mailgun\Mailgun;
 
 $message = null;
-$valid = new Amena\Validation\Validate();
-$domain = "sandboxxxxx.mailgun.org";
-$valid = new Amena\Valication\Validate();
+$valid = new Validate();
 
 $args = [
   'name'=>FILTER_SANITIZE_STRING,
@@ -47,8 +92,8 @@ if(!empty($input)){
   if(empty($valid->errors)){
 
     # Instantiate the client.
-$mgClient = new Mailgun(MG_KEY);
-$domain = MG_DOMAIN;
+$mgClient = new Mailgun('702951f3ddbbd69df2b1efea8a97b708-060550c6-b46302b0');
+$domain = "sandbox2f61a6969f8941e9a45a6840910e026a.mailgun.org";
 
 # Make the call to the client.
 $result = $mgClient->sendMessage("$domain", array(
