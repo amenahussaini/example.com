@@ -51,20 +51,28 @@ $mgClient = new Mailgun(MG_KEY);
 $domain = MG_DOMAIN;
 
 # Make the call to the client.
-$result = $mgClient->sendMessage("$domain", array(
+/*$result = $mgClient->sendMessage("$domain", array(
           'from'    => "{$input['name']}<{$input['email']}>",
                 'to'      => 'Amena Hussaini <amena298@gmail.com>',
                 'subject' => $input['subject'],
                 'text'    => $input['message']
               )
+); */
+$result = mail(
+  'amena298@gmail.com',
+  $input['subject'],
+  $input['message'],
+  "FROM: "
 );
 
-var_dump($result);
-    $message = "<div class=\"alert alert-success\">Your form has been submitted!</div>";
-  }else{
-    $message = "<div class=\"alert alert-danger\">Your form has errors!</div>";
-  }
+$resonse = 200;
+if($resonse === 200){
+var_dump(json_decode($result));
+  //  $message = "<div class=\"alert alert-success\">Your form has been submitted!</div>";
+//  header('LOCATION: thanks.php');
 }
+
+  }
 
 ?>
 <!doctype html>
