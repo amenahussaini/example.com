@@ -23,7 +23,7 @@ class Validate
   }
 
   public function check($data){
-    $this->date = $data;
+    $this->data = $data;
 
     foreach(array_keys($this->validation) as $fieldName){
       $this->rules($fieldName);
